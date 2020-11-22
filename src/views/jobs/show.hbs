@@ -1,0 +1,37 @@
+<section class="card">
+    <div class="card-body">
+        <h1>{{ data.objective }}</h1>
+        {{#if data.compensation.minAmount }}
+        <h5>{{ data.compensation.minAmount }} {{ data.compensation.currency }} | {{ data.compensation.maxAmount }} {{ data.compensation.currency }}</h5>
+        {{/if}}
+        {{#if data.compensation.periodicity }}
+        <h5>{{ data.compensation.periodicity }}</h5>
+        {{/if}}
+        <hr>
+        <h5>Requerimientos</h5>
+        <div class="row">
+          {{#each data.strengths }}
+            <div class="col-3">
+              <div class="form-group">
+                <a href="#" class="btn btn-secondary btn-block">{{ name }}</a>
+              </div>
+            </div>
+          {{/each }}
+        </div>
+        <hr>
+        <h5>Detalles</h5>
+        <div class="row">
+          <ul>
+          {{#each data.details }}
+            <li>{{ content }}</li>
+          {{/each }}
+          </ul>
+        </div>
+        <div class="form-group">
+          <a href="/jobs" class="btn btn-primary btn-block">Buscar otra oportunidad</a>
+        </div>
+        <div class="form-group">
+          <a href="/welcome" class="btn btn-secondary btn-block">Ir al inicio</a>
+        </div>
+    </div>
+</section>

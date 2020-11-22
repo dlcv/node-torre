@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+  {{#if user}}
+    <a class="navbar-brand" href="/welcome">dlcv Torre App</a>
+  {{else}}
+    <a class="navbar-brand" href="/">dlcv Torre App</a> 
+  {{/if}}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      {{#if user}}
+      <li class="nav-item active">
+        <a class="nav-link" href="/welcome">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfiles</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profiles/">Buscar perfil</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oportunidades</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/jobs/">Buscar oportunidades</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Búsquedas</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/jobs/">Buscar en Torre</a>
+        </div>
+      </li>
+
+
+      {{else}}
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">Acerca de</a>
+      </li>
+      {{/if}}
+      
+    </ul>
+    {{#if user}}
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Cerrar sesión</a>
+        </li>
+    </ul>
+    {{else}}
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Regístrate</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Iniciar sesión</a>
+        </li>
+    </ul>
+    {{/if}}
+  </div>
+  </div>
+</nav>

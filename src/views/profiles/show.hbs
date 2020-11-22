@@ -1,0 +1,99 @@
+<section class="card">
+    <div class="card-body">
+        <div class="row">
+          <div class="col-2">
+            <img src="{{data.person.pictureThumbnail}}" alt="{{ data.person.name }}">
+          </div>
+          <div class="col-10">
+            <h1>{{ data.person.name }}</h1>
+            <h5>{{ data.person.professionalHeadline }}</h5>
+          </div>
+        </div>
+        <hr>
+        <h5>Bio</h5>
+        <div class="row">
+          <div class="col-10">
+            <p>{{data.person.summaryOfBio}}</p>
+          </div>
+        </div>
+        <hr>
+        <h5>Enlaces</h5>
+        <div class="row">
+          {{#each data.person.links }}
+            <div class="col-3">
+              <div class="form-group">
+                {{#if name }}
+                  <a href="{{ address }}" class="btn btn-secondary btn-block">{{ name }}</a>
+                {{else}}
+                  <a href="{{ address }}" class="btn btn-secondary btn-block">Otro</a>
+                {{/if}}
+              </div>
+            </div>
+          {{/each }}
+        </div>
+        <hr>
+        <h5>Ubicación</h5>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              {{ data.person.location.name }}
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+            {{ data.person.location.country }}
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h5>Fortalezas</h5>
+        <div class="row">
+          {{#each data.strengths }}
+            <div class="col-3">
+              <div class="form-group">
+                <a href="#" class="btn btn-secondary btn-block">{{ name }}</a>
+              </div>
+            </div>
+          {{/each }}
+        </div>
+        <hr>
+        <h5>Intereses</h5>
+        <div class="row">
+          {{#each data.interests }}
+            <div class="col-3">
+              <div class="form-group">
+                <a href="#" class="btn btn-secondary btn-block">{{ name }}</a>
+              </div>
+            </div>
+          {{/each }}
+        </div>
+        <hr>
+        <h5>Experiencias</h5>
+        <div class="row">
+          {{#each data.experiences }}
+            <div class="col-3">
+              <div class="form-group">
+                <a href="#" class="btn btn-secondary btn-block">{{ name }}</a>
+              </div>
+            </div>
+          {{/each }}
+        </div>
+        <hr>
+        <h5>Trabajos</h5>
+        <div class="row">
+          {{#each data.jobs }}
+            <div class="col-3">
+              <div class="form-group">
+                <a href="#" class="btn btn-secondary btn-block">{{ name }}</a>
+              </div>
+            </div>
+          {{/each }}
+        </div>
+        <div class="form-group">
+          <a href="/profiles" class="btn btn-primary btn-block">Buscar otro perfil</a>
+        </div>
+        <div class="form-group">
+          <a href="/welcome" class="btn btn-secondary btn-block">Ir al inicio</a>
+        </div>
+    </div>
+</section>
